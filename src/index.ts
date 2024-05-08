@@ -399,9 +399,9 @@ function tsPlugin(options?: {
         node: any,
         endLoc: Position = this.lastTokEndLoc
       ): void {
-        node.end = endLoc.column
+        node.end = endLoc.index
         node.loc.end = endLoc
-        if (this.options.ranges) node.range[1] = endLoc.column
+        if (this.options.ranges) node.range[1] = endLoc.index
       }
 
       startNodeAtNode(type: Node): any {
